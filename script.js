@@ -2,6 +2,11 @@ let main = function () {
   let numInputs = 1;
   let newLabelElem;
   let newInputElem;
+
+  let stateSelect = document.getElementById('stateSelector');
+  let zipCodeInput = document.getElementById('zipCodeInput');
+  let gratuityInput = document.getElementById('gratuityInput');
+
   let priceDiv = document.getElementById('priceContainer')
   let priceInputs = document.getElementsByClassName('priceInputs');
   let addInputBtn = document.getElementById('addInputBtn');
@@ -14,14 +19,10 @@ let main = function () {
     });
    
     addInputBtn.addEventListener('click', (e) => {
-
       numInputs = numInputs + 1;
-
       newLabelElem = document.createElement('label');
       newInputElem = document.createElement('input');
-      
       newLabelElem.innerHTML = "Price " + numInputs + ": ";
-
       newInputElem.setAttribute('class', 'priceInputs');
       newInputElem.setAttribute('type', 'number');
       newInputElem.setAttribute('placeholder', '$0.00');
