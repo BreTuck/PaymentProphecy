@@ -15,46 +15,36 @@
       </nav>
     </header>
     <main>
-      <section>
-       <header>
-         <h2>How Much Do Your Items Cost?</h2>
-         <label> Price 1: 
-           <input type="number" class="priceInputs" placeholder="$0.00">
-         </label>
-         
-         <label> Price 2: 
-           <input type="number" class="priceInputs" id="p2" placeholder="$0.00">
-         </label>
-         
-         <label> Price 3: 
-           <input type="number" class="priceInputs" id="p3" placeholder="$0.00">
-         </label>
-         
-         <label> Price 4: 
-           <input type="number" class="priceInputs" id="p4" placeholder="$0.00">
-         </label>
-      </section>
-          
+      <section id=priceSection'>
+        <div id='priceContainer'>
+            <h2>How Much Do Your Items Cost?</h2>
+            <label>Price 1: 
+              <input type='number' class='priceInputs' placeholder='$0.00'>
+            </label>   
+        </div>
+        
+        <button type='submit' id='addInputBtn'>Add More Items</button>
+      </section> 
       <section>
         <h2>Here's What You'll Pay!</h2>
 
         <div>
           <h4>Total: </h4> 
-          <p id="total"></p>
+          <p id='total'></p>
         </div>
 
         <div>
           <h4>Total with Tax: </h4> 
-          <p id="total"></p>
+          <p id='total'></p>
         </div>
 
         <div>
           <h4>Total with Tax & Tip: </h4> 
-          <p id="total"></p>
+          <p id='total'></p>
         </div>
 
       </section>
     </main>
-      <script src="script.js"></script>
+      <script src='script.js'></script>
   </body>
 </html>
