@@ -7,10 +7,12 @@ let main = function () {
   let addInputBtn = document.getElementById('addInputBtn');
 
   let setupEvents = function () {
-    Array.prototype.forEach.call(priceInputs, (indivElem) => {
-      indivElem.addEventListener('keyup', calculate);
+    priceDiv.addEventListener('keyup', (e) => {
+      if (e.target && e.target.matches('input.priceInputs')) {
+        calculate();
+      }
     });
-
+   
     addInputBtn.addEventListener('click', (e) => {
 
       numInputs = numInputs + 1;
