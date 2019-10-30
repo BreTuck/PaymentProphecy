@@ -2,7 +2,7 @@ import requests
 import bs4
 import csv
 
-FILE_NAME = "tax_table_attempt" # CONSTANTS - Validation criteria to check for in HTML 
+FILE_NAME = "tax_table_attempt_2.csv" # CONSTANTS - Validation criteria to check for in HTML 
 
 # CONSTANTS - Validation criteria to check for in HTML 
 PAGE_CRITERIA = "January 30, 2019"
@@ -26,7 +26,7 @@ if response.status_code == 200 :
     tableHead = parsedResponse.find("thead")
     if tableHead != None:
       for header in tableHead.find("tr").find_all("th"):
-        tableHeadings.append(header.text)
+        tableHeadings.append(header.text) 
 
     # Setup CSV
     fileObj = csv.writer(open(FILE_NAME, 'w', newline=''))     
@@ -38,6 +38,7 @@ if response.status_code == 200 :
         if isinstance(col, bs4.element.Tag):
           tempRow.append(col.text)
       fileObj.writerow(tempRow)
+      tempRow = []
 
 
   
